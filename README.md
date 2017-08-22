@@ -8,4 +8,3 @@ This work is part of the Free Code Camp data visualization certification.
 
 * D3
 * React
-* React-Faux-DOM

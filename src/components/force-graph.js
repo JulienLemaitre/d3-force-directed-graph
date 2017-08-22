@@ -72,6 +72,7 @@ class ForceGraph extends Component {
 
     simulation.force("link")
       .links(links)
+      .strength(1)
       .distance(30);
 
     simulation.force("charge")
