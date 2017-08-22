@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>Shared borders - D3 Forced Directed Graph</h1>
+          <h1>Shared borders - D3 Force Directed Graph</h1>
         </div>
         <div className="App-body">
           <ForceGraph

@@ -32,11 +32,11 @@ class ForceGraph extends Component {
 
     const node = svg.append('g')
       .attr('class', 'nodes')
-      .selectAll("circle")
+      .selectAll("rect")
       .data(nodes)
-      .enter().append("circle")
+      .enter().append("rect")
       .attr('class', d => `flag flag-${d.code}`)
-      .attr('r', 7.5)
+      // .attr('r', 12.5)
       .attr('fill', d => `url(#image-${d.code})`)
       .call(d3.drag()
         .on("start", dragstarted)
@@ -59,11 +59,11 @@ class ForceGraph extends Component {
       .attr('background-repeat', 'none')
       .attr('x', d => {
           if (flags[d.code])
-            return flags[d.code].split(" ")[0] - 5;
+            return flags[d.code].split(" ")[0];
         })
       .attr('y', d => {
         if (flags[d.code])
-          return flags[d.code].split(" ")[1];
+          return +flags[d.code].split(" ")[1];
       });
 
 
@@ -72,11 +72,11 @@ class ForceGraph extends Component {
 
     simulation.force("link")
       .links(links)
-      .distance(70);
+      .distance(30);
 
     simulation.force("charge")
-      .strength(-10)
-      .distanceMax(300);
+      .strength(-50)
+      .distanceMax(200);
 
     function ticked() {
       link
@@ -86,8 +86,8 @@ class ForceGraph extends Component {
         .attr("y2", d => d.target.y);
 
       node
-        .attr("cx", d => d.x)
-        .attr("cy", d => d.y);
+        .attr("x", d => d.x)
+        .attr("y", d => d.y);
     }
 
     function dragstarted(d) {
