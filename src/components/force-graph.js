@@ -10,8 +10,8 @@ class ForceGraph extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const width = 900;
-    const height = 600;
+    const width = 1200;
+    const height = 900;
     const { nodes, links } = nextProps.data;
 
     let svg = d3.select(this.svg)
@@ -71,7 +71,12 @@ class ForceGraph extends Component {
       .on("tick", ticked);
 
     simulation.force("link")
-      .links(links);
+      .links(links)
+      .distance(70);
+
+    simulation.force("charge")
+      .strength(-10)
+      .distanceMax(300);
 
     function ticked() {
       link
