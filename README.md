@@ -6,7 +6,7 @@ This work is part of the Free Code Camp data visualization certification.
 
 # Demo
 
-Here is my [shared borders graph on codepen](shared borders).
+Here is my [shared borders graph on codepen](https://codepen.io/LCreation/full/ZJoMeM/).
 
 # Techno used
 
