@@ -4,6 +4,10 @@ Show common borders between all countries of the world.
 
 This work is part of the Free Code Camp data visualization certification.
 
+# Demo
+
+Here is my [shared borders graph on codepen](shared borders).
+
 # Techno used
 
 * D3
